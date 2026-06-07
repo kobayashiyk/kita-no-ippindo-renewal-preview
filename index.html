@@ -348,7 +348,106 @@
   /* ============ 知床連山シルエット ディバイダー ============ */
   .ridge{display:block;width:100%;height:64px;color:var(--forest);margin-bottom:-1px;}
   .ridge.flip{transform:rotate(180deg);}
+
+  /* ============ 生産者紹介 ============ */
+  .producers .p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .pcard{background:var(--white);border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(31,61,47,.08);transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
+  .pcard:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(31,61,47,.15);}
+  .pcard .pimg{aspect-ratio:3/2;background-size:cover;background-position:center;position:relative;}
+  .pcard .pimg .crop{position:absolute;left:12px;bottom:12px;background:rgba(31,61,47,.92);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:30px;letter-spacing:.03em;}
+  .pcard .pbody{padding:18px 20px 22px;}
+  .pcard .pregion{font-family:var(--eng);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+  .pcard h3{font-family:var(--mincho);font-size:18px;color:var(--forest);margin-top:5px;letter-spacing:.03em;}
+  .pcard .quote{font-family:var(--mincho);font-size:14.5px;color:var(--ink);line-height:1.75;margin-top:12px;padding-left:14px;border-left:2.5px solid var(--autumn);}
+  .pcard p.bio{font-size:13px;color:var(--ink-soft);line-height:1.8;margin-top:12px;}
+  .producers .pnote{text-align:center;font-size:12px;color:#9b907e;margin-top:24px;}
+  @media(max-width:860px){.producers .p-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+
+  /* ============ 旬カレンダー ============ */
+  .seasoncal .calwrap{overflow-x:auto;padding-bottom:6px;}
+  .cal-grid{display:grid;grid-template-columns:118px repeat(12,1fr);gap:5px;align-items:center;min-width:720px;}
+  .cal-grid .mh{font-family:var(--eng);font-size:11px;color:var(--ink-soft);text-align:center;font-variant-numeric:tabular-nums;}
+  .cal-grid .corner{font-size:11px;color:var(--gold);font-family:var(--eng);letter-spacing:.1em;}
+  .cal-grid .rl{font-size:13px;color:var(--ink);font-weight:700;font-family:var(--mincho);}
+  .cal-grid .cell{height:18px;border-radius:4px;background:var(--paper-3);}
+  .cal-grid .cell.on{background:var(--forest-2);}
+  .cal-grid .cell.peak{background:var(--autumn);}
+  .seasoncal .callegend{display:flex;gap:18px;justify-content:center;margin-top:20px;font-size:12px;color:var(--ink-soft);}
+  .seasoncal .callegend i{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:6px;vertical-align:-2px;}
+
+  /* ============ 定期便バンド ============ */
+  .subs{background:var(--ocean);color:#fff;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;}
+  .subs .sc{padding:clamp(32px,5vw,52px);}
+  .subs .lab{font-family:var(--eng);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#bfe3e8;font-weight:600;margin-bottom:13px;}
+  .subs h2{font-family:var(--mincho);font-size:clamp(23px,3.2vw,34px);line-height:1.45;letter-spacing:.04em;}
+  .subs p{margin-top:15px;color:#d8eef1;line-height:1.9;font-size:15px;max-width:440px;}
+  .subs .plans{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+  .subs .plan{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 16px;text-align:center;}
+  .subs .plan b{font-family:var(--mincho);font-size:15px;display:block;}
+  .subs .plan span{font-size:11px;color:#bfe3e8;}
+  .subs .simg{background-size:cover;background-position:center;min-height:260px;}
+  @media(max-width:760px){.subs{grid-template-columns:1fr;} .subs .simg{order:-1;min-height:200px;}}
+
+  /* レビュー集計バッジ */
+  .revbadge{display:inline-flex;align-items:center;gap:9px;margin-top:14px;font-size:13px;color:var(--ink-soft);}
+  .revbadge .stars{color:var(--autumn);letter-spacing:1px;}
+  .revbadge b{font-family:var(--eng);font-size:17px;color:var(--forest);}
+
+  /* ============ 実装する主な機能（Powered by Shopify） ============ */
+  .caps{background:var(--paper-2);}
+  .caps .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .capcard{background:var(--white);border:1px solid var(--line-soft);border-radius:10px;padding:20px 18px;}
+  .capcard .ic{width:40px;height:40px;border-radius:9px;background:var(--forest-soft);color:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:13px;}
+  .capcard h3{font-family:var(--mincho);font-size:15.5px;color:var(--forest);margin-bottom:7px;letter-spacing:.02em;}
+  .capcard p{font-size:12.5px;color:var(--ink-soft);line-height:1.7;}
+  .caps .powered{text-align:center;margin-top:24px;font-size:12.5px;color:var(--ink-soft);}
+  .caps .powered b{color:var(--forest);font-weight:700;}
+  @media(max-width:920px){.caps .cap-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.caps .cap-grid{grid-template-columns:1fr;}}
 </style>
+<link rel="canonical" href="https://shiretokotourist.com/ec/" />
+<!-- 構造化データ（JSON-LD）: 検索結果に店舗情報・価格・★を出すためのSEO実装デモ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "北の逸品堂",
+  "image": "https://kobayashiyk.github.io/kita-no-ippindo-renewal-preview/assets/img/hero-forest.jpg",
+  "description": "北海道・知床、オホーツクの大地が育てた特産品を産地直送でお届けするオンラインストア。",
+  "url": "https://shiretokotourist.com/ec/",
+  "telephone": "+81-152-25-2642",
+  "priceRange": "¥¥",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "099-4403",
+    "addressRegion": "北海道",
+    "addressLocality": "斜里郡清里町",
+    "streetAddress": "向陽282",
+    "addressCountry": "JP"
+  },
+  "openingHours": "Mo-Su 09:00-19:30",
+  "parentOrganization": { "@type": "Organization", "name": "知床ツーリスト" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "北海道オホーツク小清水町産アスパラガス",
+  "image": "https://kobayashiyk.github.io/kita-no-ippindo-renewal-preview/assets/img/asparagus1.jpg",
+  "description": "オホーツクの寒暖差が育てた、朝採り産地直送のグリーンアスパラガス。",
+  "brand": { "@type": "Brand", "name": "北の逸品堂" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "124" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "JPY",
+    "lowPrice": "3150",
+    "highPrice": "15800",
+    "offerCount": "5",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
 </head>
 <body>
 <a href="#main" class="skip">本文へスキップ</a>
@@ -481,6 +580,7 @@
       <span class="sec-tag">Specialties</span>
       <h2 class="sec-title">知床・オホーツクの特産品</h2>
       <p class="sec-lead"><span class="np">いまの主役は、小清水町産アスパラガス。</span><span class="np">寒暖差が生む甘みを、</span><span class="np">収穫したその日に冷蔵便で。</span><span class="np">グラム数を選べるから、ご家庭用にも贈り物にも。</span></p>
+      <div class="revbadge reveal"><span class="stars">★★★★★</span><b>4.8</b><span>／ 124件のレビュー</span></div>
     </div>
 
     <div class="toolbar reveal">
@@ -509,38 +609,27 @@
   </div>
 </section>
 
-<!-- 中古アウトドア区画（明確に分離） -->
+<!-- 中古アウトドアはモール誘導（特産品に集中） -->
 <section class="split" id="outdoor">
   <div class="wrap">
     <div class="reveal">
       <span class="lab">Used Outdoor Market</span>
-      <h2>知床アウトドア中古市。<br>山で生きた道具を、次の人へ。</h2>
-      <p><span class="np">知床の自然を歩いてきた良質なアウトドアウエアを、</span><span class="np">一点ものとして厳選。</span><span class="np">Patagoniaを中心に、</span><span class="np">状態をていねいに見極めてお届けします。</span><span class="np">特産品とは売り場を分け、</span><span class="np">「探しやすさ」と「専門性」を両立しました。</span></p>
-      <p class="note"><span class="np">一点ものは在庫1点限り。</span><span class="np">サイズ・コンディションを明記し、</span><span class="np">売り切れは自動で表示が切り替わります。</span></p>
+      <h2>中古アウトドアは、<br>メルカリ・Yahoo!で販売中。</h2>
+      <p><span class="np">Patagonia等の良質な中古アウトドアは、</span><span class="np">回転が速く集客のいらないフリマ・モールが好相性。</span><span class="np">当サイトは特産品に集中し、</span><span class="np">中古は使い慣れた販路を継続します。</span></p>
+      <p class="note"><span class="np">将来、出品数が増えれば、</span><span class="np">サイト内に「知床アウトドア中古市」として展開も可能です。</span></p>
       <div class="sbtn">
-        <a href="#outdoor-grid" class="btn btn-cta">中古市を見る <span class="arw">→</span></a>
+        <a href="#" class="btn btn-cta">メルカリで見る <span class="arw">→</span></a>
+        <a href="#" class="btn" style="background:#fff;color:var(--forest)">Yahoo!で見る</a>
       </div>
     </div>
     <div class="panel reveal" data-d="1">
-      <h4>中古市の3つの約束</h4>
+      <h4>なぜ中古はモールで？</h4>
       <ul>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">状態を5段階で明記</b><br>実寸・使用感・補修跡まで写真で。</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">一点もの在庫管理</b><br>売れたら即「SOLD OUT」表示。</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">サステナブルな循環</b><br>良い道具を、長く次の人へ。</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">回転が速い</b><br>中古は二次流通モールの方が売れやすい。</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">集客コストが不要</b><br>すでに買い手が集まっている。</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">本命に集中</b><br>自社ECは特産品でリピートを育てる。</span></li>
       </ul>
     </div>
-  </div>
-</section>
-
-<!-- 中古アウトドア商品グリッド -->
-<section class="section" id="outdoor-grid">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-tag">Patagonia & more</span>
-      <h2 class="sec-title">一点もの・中古アウトドア</h2>
-      <p class="sec-lead"><span class="np">サイズ・ブランド・状態で絞り込めます。</span><span class="np">気になる一着はお早めに。</span></p>
-    </div>
-    <div class="pgrid" id="ogrid"><!-- JSで描画 --></div>
   </div>
 </section>
 
@@ -587,6 +676,47 @@
   </div>
 </section>
 
+<!-- 生産者紹介 -->
+<section class="section producers" id="producers">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Producers</span>
+      <h2 class="sec-title">作り手の顔が見える店。</h2>
+      <p class="sec-lead"><span class="np">誰がどんな想いで育てたのか。</span><span class="np">知床・清里の生産者を、お客様にご紹介します。</span><span class="np">「○○さんのアスパラ」で選ばれる店へ。</span></p>
+    </div>
+    <div class="p-grid">
+      <article class="pcard reveal" data-d="1">
+        <div class="pimg" style="background-image:url('assets/img/producer1.jpg')"><span class="crop">アスパラガス</span></div>
+        <div class="pbody">
+          <div class="pregion">Koshimizu, Hokkaido</div>
+          <h3>小清水 アスパラ農家</h3>
+          <p class="quote">「朝3時起き。いちばん甘い瞬間に穂先を摘みます。」</p>
+          <p class="bio"><span class="np">オホーツクの寒暖差を活かした露地栽培。</span><span class="np">穂先までやわらかい、春いちばんの味。</span></p>
+        </div>
+      </article>
+      <article class="pcard reveal" data-d="2">
+        <div class="pimg" style="background-image:url('assets/img/producer2.jpg')"><span class="crop">じゃがいも・根菜</span></div>
+        <div class="pbody">
+          <div class="pregion">Kiyosato, Hokkaido</div>
+          <h3>清里 畑作農家</h3>
+          <p class="quote">「土が違う。だから、味が濃い。」</p>
+          <p class="bio"><span class="np">原生林の伏流水と火山灰土壌が育む、</span><span class="np">ほくほくのじゃがいもと甘い根菜。</span></p>
+        </div>
+      </article>
+      <article class="pcard reveal" data-d="3">
+        <div class="pimg" style="background-image:url('assets/img/producer3.jpg')"><span class="crop">乾物・ギフト</span></div>
+        <div class="pbody">
+          <div class="pregion">Shari, Hokkaido</div>
+          <h3>知床 目利きの店主</h3>
+          <p class="quote">「自分が贈りたいものだけを、詰めています。」</p>
+          <p class="bio"><span class="np">昆布や干し椎茸など、</span><span class="np">地元の作り手から選り抜いた逸品を詰合せに。</span></p>
+        </div>
+      </article>
+    </div>
+    <p class="pnote">※写真・氏名はイメージです。公開時は実際の生産者様のお写真とプロフィールを掲載します。</p>
+  </div>
+</section>
+
 <!-- 生産者ストーリー -->
 <section class="section tint story" id="story">
   <div class="wrap">
@@ -601,6 +731,25 @@
       <p><span class="np">北の逸品堂は、</span><span class="np">知床・清里で旅行業を営むなかで出会った生産者の方々と、</span><span class="np">長く築いてきた信頼から生まれました。</span><span class="np">アスパラガスは、朝採りのものをその日のうちに発送。</span><span class="np">畑から食卓までの時間を、できるだけ短く。</span></p>
       <p><span class="np">大量生産では出せない味と物語を、</span><span class="np">地域のネットワークだからこそお届けできます。</span><span class="np">これが、後から参入したどのECにも真似できない、</span><span class="np">私たちの強みです。</span></p>
       <div class="sig">知床ツーリスト 店主　<b>石田 富雄</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 知床の旬カレンダー -->
+<section class="section seasoncal" id="calendar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Seasonal Calendar</span>
+      <h2 class="sec-title">知床の旬カレンダー</h2>
+      <p class="sec-lead"><span class="np">いちばん美味しい時期に、いちばん良いものを。</span><span class="np">旬の予約開始もこちらでお知らせします。</span></p>
+    </div>
+    <div class="calwrap reveal">
+      <div class="cal-grid" id="calgrid"><!-- JSで描画 --></div>
+    </div>
+    <div class="callegend reveal">
+      <span><i style="background:var(--autumn)"></i>最盛期（おすすめ）</span>
+      <span><i style="background:var(--forest-2)"></i>収穫・出荷</span>
+      <span><i style="background:var(--paper-3)"></i>—</span>
     </div>
   </div>
 </section>
@@ -629,6 +778,25 @@
         <h3>季節商品の予約販売</h3>
         <p>アスパラのような旬の商品は、収穫前からのご予約を受付。販売期間の設定で、採れたてを逃しません。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 定期便 -->
+<section class="section" id="subscribe">
+  <div class="wrap">
+    <div class="subs reveal">
+      <div class="sc">
+        <span class="lab">Subscription</span>
+        <h2>旬を、定期便で。</h2>
+        <p><span class="np">いちばん美味しい時期の特産品を、</span><span class="np">自動でお届け。</span><span class="np">買い忘れなく、毎回送料も商品もおトクに。</span><span class="np">いつでも休止・解約できます。</span></p>
+        <div class="plans">
+          <div class="plan"><b>毎月便</b><span>毎月お届け</span></div>
+          <div class="plan"><b>隔月便</b><span>2か月に1回</span></div>
+          <div class="plan"><b>季節便</b><span>旬のときだけ</span></div>
+        </div>
+      </div>
+      <div class="simg" style="background-image:url('assets/img/asparagus2.jpg')"></div>
     </div>
   </div>
 </section>
@@ -687,6 +855,60 @@
         <button class="btn btn-cta" type="submit">登録する</button>
       </form>
     </div>
+  </div>
+</section>
+
+<!-- 実装する主な機能（Powered by Shopify） -->
+<section class="section caps" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">What We Build</span>
+      <h2 class="sec-title">このサイトに実装する主な機能</h2>
+      <p class="sec-lead"><span class="np">見た目だけでなく、</span><span class="np">「売れて・運用できる」裏側まで。</span><span class="np">下記は本番構築時に実装する機能です。</span></p>
+    </div>
+    <div class="cap-grid">
+      <div class="capcard reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>決済</h3>
+        <p>クレカ・コンビニ・PayPay・Apple Pay等。カード情報の安全管理(PCI-DSS)も標準。</p>
+      </div>
+      <div class="capcard reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 7h14l-1.2 10.5a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></div>
+        <h3>カート・注文</h3>
+        <p>カート、注文管理、在庫連動（売り切れ自動表示）、領収書発行。</p>
+      </div>
+      <div class="capcard reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17.5" cy="17.5" r="1.6"/></svg></div>
+        <h3>配送・送料</h3>
+        <p>地域別送料、クール便、同梱可否の自動判定、配送日指定。</p>
+      </div>
+      <div class="capcard reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12a9 9 0 1 1 9 9"/><path d="M3 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>リピート施策</h3>
+        <p>定期購入（サブスク）、クーポン、ギフト・のし、メール配信。</p>
+      </div>
+      <div class="capcard reveal" data-d="3">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <h3>管理画面</h3>
+        <p>非エンジニアでも商品登録・価格変更・受注処理が可能。</p>
+      </div>
+      <div class="capcard reveal" data-d="3">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M5 12a7 7 0 0 1 14 0M5 12a7 7 0 0 0 14 0"/><path d="M12 5v14"/></svg></div>
+        <h3>インフラ</h3>
+        <p>サーバ・SSL・表示速度・バックアップ。セール等のアクセス集中でも安定。</p>
+      </div>
+      <div class="capcard reveal" data-d="4">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>安全・保守</h3>
+        <p>セキュリティ更新、不正注文対策、継続的な監視・運用。</p>
+      </div>
+      <div class="capcard reveal" data-d="4">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-3"/></svg></div>
+        <h3>拡張・分析</h3>
+        <p>レビュー・SEO・定期便などのアプリ、売上/アクセス/離脱の分析。</p>
+      </div>
+    </div>
+    <p class="powered"><b>Powered by Shopify</b>　— 上記の"裏側"を月額数千円で。デザインはフルカスタム、御社は商品と集客に集中できます。</p>
   </div>
 </section>
 
@@ -883,6 +1105,7 @@ function outdoorCard(p){
   </article>`;
 }
 function renderOutdoor(){
+  if(!ogrid) return; // 中古はモール誘導に変更したためグリッドは非表示
   ogrid.innerHTML = OUTDOOR.map(outdoorCard).join('');
   bindAdd(ogrid);
   observeReveals();
@@ -926,9 +1149,34 @@ function observeReveals(){
   failsafe = setTimeout(revealAll, 1600);
 }
 
+/* ===== 旬カレンダー 描画 ===== */
+const SEASON = [
+  {n:"アスパラガス", peak:[4,5], on:[4,5,6]},
+  {n:"じゃがいも", peak:[9,10], on:[8,9,10,11]},
+  {n:"根菜・かぼちゃ", peak:[10,11], on:[9,10,11,12]},
+  {n:"昆布・乾物", peak:[], on:[1,2,3,4,5,6,7,8,9,10,11,12]},
+  {n:"鮭・海の幸", peak:[9,10,11], on:[9,10,11,12]},
+  {n:"ギフト詰合せ", peak:[7,12], on:[1,2,3,4,5,6,7,8,9,10,11,12]},
+];
+function renderCalendar(){
+  const grid = document.getElementById('calgrid');
+  if(!grid) return;
+  let html = '<div class="corner">品目＼月</div>';
+  for(let m=1;m<=12;m++) html += `<div class="mh">${m}</div>`;
+  SEASON.forEach(s=>{
+    html += `<div class="rl">${s.n}</div>`;
+    for(let m=1;m<=12;m++){
+      const cls = s.peak.includes(m) ? 'cell peak' : (s.on.includes(m) ? 'cell on' : 'cell');
+      html += `<div class="${cls}"></div>`;
+    }
+  });
+  grid.innerHTML = html;
+}
+
 /* init */
 renderSpecials();
 renderOutdoor();
+renderCalendar();
 observeReveals();
 </script>
 </body>
