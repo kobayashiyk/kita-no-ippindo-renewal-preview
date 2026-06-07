@@ -309,6 +309,45 @@
   .drawer nav a{padding:14px 8px;border-bottom:1px solid var(--line-soft);font-size:16px;font-weight:500;color:var(--ink-2);display:flex;justify-content:space-between;align-items:center;}
   .drawer nav a:hover{color:var(--forest);}
   .drawer .dcta{margin-top:20px;}
+
+  /* ============ 知床シーンバンド（流氷など） ============ */
+  .scene{position:relative;min-height:clamp(300px,46vw,420px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;}
+  .scene .sbg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#16323a;}
+  .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,34,40,.5) 0%,rgba(15,34,40,.62) 100%);}
+  .scene .inner{position:relative;z-index:2;max-width:780px;padding:48px 24px;}
+  .scene .lab{font-family:var(--eng);font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:#cfe6ea;font-weight:600;display:inline-flex;align-items:center;gap:11px;margin-bottom:18px;}
+  .scene .lab::before,.scene .lab::after{content:"";width:26px;height:1.5px;background:#9fc7cf;display:inline-block;}
+  .scene h2{font-family:var(--mincho);font-size:clamp(24px,3.6vw,38px);line-height:1.55;letter-spacing:.06em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35);}
+  .scene h2 em{font-style:normal;color:#bfe3e8;}
+  .scene p{margin-top:18px;color:#e3eef0;font-size:clamp(14px,1.6vw,16px);line-height:1.95;}
+
+  /* ============ 産地（知床・清里） ============ */
+  .origin .o-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:center;}
+  .origin .o-tiles{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px;}
+  .origin .tile{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(31,61,47,.12);}
+  .origin .tile .ti{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s var(--ease);}
+  .origin .tile:hover .ti{transform:scale(1.06);}
+  .origin .tile.big{grid-column:1 / -1;aspect-ratio:16/7.5;}
+  .origin .tile.sm{aspect-ratio:1/0.92;}
+  .origin .tile .cap{position:absolute;left:0;bottom:0;right:0;padding:18px 16px 12px;background:linear-gradient(180deg,transparent,rgba(16,32,24,.82));color:#fff;}
+  .origin .tile .cap b{font-family:var(--mincho);font-size:14px;font-weight:700;letter-spacing:.04em;display:block;}
+  .origin .tile .cap span{font-family:var(--eng);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#f3c98e;}
+  .origin .o-text .badge-wsh{display:inline-flex;align-items:center;gap:8px;background:var(--ocean-soft);color:var(--ocean);font-size:12px;font-weight:700;padding:7px 14px;border-radius:30px;letter-spacing:.04em;margin-bottom:16px;}
+  .origin .o-text .facts{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap;}
+  .origin .o-text .fact .n{font-family:var(--eng);font-size:30px;font-weight:700;color:var(--forest);line-height:1;}
+  .origin .o-text .fact .l{font-size:12px;color:var(--ink-soft);margin-top:5px;}
+  /* 北海道マップ */
+  .hokkaido{display:flex;align-items:center;gap:18px;margin-top:26px;padding:18px 20px;background:var(--white);border:1px solid var(--line);border-radius:10px;}
+  .hokkaido .hk-badge{flex:none;width:72px;height:72px;border-radius:50%;background:var(--forest);color:#f3c98e;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;position:relative;}
+  .hokkaido .hk-badge::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--autumn);opacity:.45;}
+  .hokkaido .hk-badge .en{font-family:var(--eng);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:#cfe6ea;}
+  .hokkaido .hk-t .hk-place{font-family:var(--mincho);font-size:15px;color:var(--forest);font-weight:700;}
+  .hokkaido .hk-t p{font-size:12.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6;}
+  @media(max-width:860px){.origin .o-grid{grid-template-columns:1fr;}}
+
+  /* ============ 知床連山シルエット ディバイダー ============ */
+  .ridge{display:block;width:100%;height:64px;color:var(--forest);margin-bottom:-1px;}
+  .ridge.flip{transform:rotate(180deg);}
 </style>
 </head>
 <body>
@@ -395,6 +434,16 @@
     </div>
   </div>
 </div>
+
+<!-- 知床シーンバンド（オホーツクの流氷） -->
+<section class="scene">
+  <div class="sbg" style="background-image:url('assets/img/shiretoko-ice.jpg')"></div>
+  <div class="inner reveal">
+    <span class="lab">Sea of Okhotsk</span>
+    <h2><span class="np">オホーツクの流氷が育む海、</span><span class="np">寒暖差が磨く大地。</span><br><em><span class="np">知床のめぐみは、四季そのものです。</span></em></h2>
+    <p><span class="np">流氷がもたらす豊かな海と、</span><span class="np">夏の寒暖差が生む濃い甘み。</span><span class="np">世界自然遺産・知床ならではの恵みを、</span><span class="np">そのままの鮮度でお届けします。</span></p>
+  </div>
+</section>
 
 <!-- カテゴリ -->
 <section class="section" id="categories">
@@ -492,6 +541,49 @@
       <p class="sec-lead"><span class="np">サイズ・ブランド・状態で絞り込めます。</span><span class="np">気になる一着はお早めに。</span></p>
     </div>
     <div class="pgrid" id="ogrid"><!-- JSで描画 --></div>
+  </div>
+</section>
+
+<!-- 産地紹介（知床・清里） -->
+<section class="section origin" id="origin">
+  <div class="wrap o-grid">
+    <div class="o-text reveal">
+      <span class="badge-wsh">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>
+        世界自然遺産・知床
+      </span>
+      <h2 class="sec-title" style="text-align:left">知床のふもと、<br>清里町からお届けします。</h2>
+      <p class="sec-lead" style="text-align:left;margin-left:0;"><span class="np">北海道の東のはて、オホーツク海に面した斜里郡清里町。</span><span class="np">流氷が育む豊かな海と、原生林に抱かれた澄んだ水、</span><span class="np">昼夜の寒暖差——。</span><span class="np">この土地でしか生まれない味を、産地直送でお届けします。</span></p>
+      <div class="facts">
+        <div class="fact"><div class="n">−15<small style="font-size:14px;">℃</small></div><div class="l">真冬のオホーツク</div></div>
+        <div class="fact"><div class="n">5<small style="font-size:14px;">市町村</small></div><div class="l">知床世界自然遺産</div></div>
+        <div class="fact"><div class="n">朝採り</div><div class="l">その日のうちに発送</div></div>
+      </div>
+      <div class="hokkaido">
+        <div class="hk-badge" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span class="en">Shiretoko</span>
+        </div>
+        <div class="hk-t">
+          <span class="hk-place">北海道 斜里郡 清里町</span>
+          <p><span class="np">知床半島の付け根、オホーツク海まで車で約30分。</span><span class="np">産地から食卓へ、最短の距離でお届けします。</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="o-tiles reveal" data-d="1">
+      <div class="tile big">
+        <div class="ti" style="background-image:url('assets/img/shiretoko-land.jpg')"></div>
+        <div class="cap"><span>The Land</span><b>清里・知床の大地</b></div>
+      </div>
+      <div class="tile sm">
+        <div class="ti" style="background-image:url('assets/img/shiretoko-forest.jpg')"></div>
+        <div class="cap"><span>Forest</span><b>原生林</b></div>
+      </div>
+      <div class="tile sm">
+        <div class="ti" style="background-image:url('assets/img/shiretoko-birch.jpg')"></div>
+        <div class="cap"><span>Winter</span><b>白樺と雪原</b></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -598,6 +690,10 @@
   </div>
 </section>
 
+<!-- 知床連山シルエット -->
+<svg class="ridge" style="color:#16291f" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="currentColor" d="M0,64 L0,42 L110,20 L210,44 L330,12 L450,40 L560,22 L690,48 L820,16 L960,46 L1080,24 L1200,50 L1320,26 L1440,44 L1440,64 Z"/>
+</svg>
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
