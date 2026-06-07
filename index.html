@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script>document.documentElement.className+=' js';</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>北の逸品堂｜知床・清里の特産品お取り寄せ｜知床ツーリスト</title>
+<meta name="description" content="北海道・知床、オホーツクの大地が育てた特産品をお届けする「北の逸品堂」。小清水町産アスパラガス、地場の農産物・乾物を産地直送。作り手の顔が見える、知床からのお取り寄せ。" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23f7f3ea'/><path d='M6 22 L13 9 L20 22 Z' fill='none' stroke='%231f3d2f' stroke-width='1.8' stroke-linejoin='round'/><path d='M13 22 L19 11 L25 22 Z' fill='%231f3d2f'/><circle cx='23' cy='8' r='2.4' fill='%23c4622d'/></svg>" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="北の逸品堂｜知床・清里の特産品お取り寄せ" />
+<meta property="og:description" content="オホーツクの大地が育てた特産品を、知床から産地直送。" />
+<meta property="og:locale" content="ja_JP" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* 紙・生成りベース */
+    --paper:#F7F3EA; --paper-2:#F0E9DA; --paper-3:#E5DAC4;
+    /* 知床の森 — 主役色 */
+    --forest:#1F3D2F; --forest-2:#2D5A43; --forest-soft:#e4ece6; --forest-deep:#16302457;
+    /* オホーツクの藍 — 寒色アクセント */
+    --ocean:#1f5f6e; --ocean-soft:#e1eef0;
+    /* 実りの暖色 — アクション色 */
+    --autumn:#c4622d; --autumn-deep:#a64f20; --autumn-soft:#f7e9df;
+    /* CTA（白文字でコントラスト確保） */
+    --cta:#b8531f; --cta-h:#9d4419;
+    /* ink */
+    --ink:#251f17; --ink-2:#352c20; --ink-soft:#5b5042;
+    --gold:#a8843a; --line:#ddd1ba; --line-soft:#e8ddc8;
+    --white:#ffffff;
+    --mincho:"Shippori Mincho B1", serif;
+    --gothic:"Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    --eng:"Cormorant", serif;
+    --maxw:1200px;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:118px;}
+  body{
+    font-family:var(--gothic); color:var(--ink-2); background:var(--paper);
+    font-size:16px; line-height:1.85; font-weight:400; letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.mincho{font-feature-settings:"palt" 1;}
+  h1,h2,h3,h4{word-break:keep-all;overflow-wrap:anywhere;line-height:1.5;font-weight:700;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;}
+  ::selection{background:var(--forest);color:var(--paper);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,5vw,40px);}
+  .mincho{font-family:var(--mincho);}
+  .num,.eng{font-family:var(--eng);font-variant-numeric:tabular-nums;}
+  :focus-visible{outline:3px solid var(--autumn);outline-offset:3px;border-radius:2px;}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:13px 20px;z-index:400;font-size:15px;}
+  .skip:focus{left:0;top:0;}
+
+  /* ---------- セクション見出し ---------- */
+  .sec-tag{font-family:var(--eng);font-size:14px;letter-spacing:.32em;color:var(--gold);font-weight:600;text-transform:uppercase;display:inline-flex;align-items:center;gap:11px;margin-bottom:14px;}
+  .sec-tag::before{content:"";width:26px;height:2px;background:var(--autumn);display:inline-block;}
+  .sec-title{font-family:var(--mincho);font-size:clamp(26px,4.2vw,40px);color:var(--forest);letter-spacing:.04em;line-height:1.4;}
+  .sec-lead{margin-top:16px;color:var(--ink-soft);font-size:clamp(15px,1.7vw,17px);max-width:680px;line-height:1.95;}
+
+  /* reveal */
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  .js .reveal[data-d="1"]{transition-delay:.08s;}
+  .js .reveal[data-d="2"]{transition-delay:.16s;}
+  .js .reveal[data-d="3"]{transition-delay:.24s;}
+
+  /* ---------- ボタン ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:16px;letter-spacing:.04em;font-weight:700;min-height:54px;padding:14px 30px;border-radius:2px;border:0;cursor:pointer;line-height:1.4;transition:background .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease),border-color .25s;}
+  .btn .arw{transition:transform .3s var(--ease);}
+  .btn:hover .arw{transform:translateX(4px);}
+  .btn-cta{background:var(--cta);color:#fff;box-shadow:0 6px 20px rgba(184,83,31,.26);}
+  .btn-cta:hover{background:var(--cta-h);transform:translateY(-2px);box-shadow:0 10px 26px rgba(184,83,31,.32);}
+  .btn-forest{background:var(--forest);color:#fff;}
+  .btn-forest:hover{background:var(--forest-2);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+  .btn-ghost:hover{background:var(--forest);color:#fff;}
+
+  /* ============ ヘッダー ============ */
+  .topbar{background:var(--forest);color:#dfe8e2;font-size:12.5px;letter-spacing:.05em;}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:34px;gap:16px;}
+  .topbar a{color:#dfe8e2;}
+  .topbar .tb-r{display:flex;gap:18px;}
+  .topbar .tb-r span{opacity:.9;}
+  @media(max-width:700px){.topbar .tb-l{display:none;} .topbar .wrap{justify-content:center;}}
+
+  header.site{position:sticky;top:0;z-index:200;background:rgba(247,243,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .hd{display:flex;align-items:center;gap:20px;min-height:74px;}
+  .brand{display:flex;align-items:center;gap:13px;margin-right:auto;}
+  .brand .logo{width:42px;height:42px;flex:none;}
+  .brand .bn{font-family:var(--mincho);font-weight:800;font-size:22px;color:var(--forest);letter-spacing:.06em;line-height:1.15;}
+  .brand .bs{display:block;font-family:var(--eng);font-size:11px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;font-weight:600;}
+  .nav{display:flex;gap:26px;align-items:center;}
+  .nav a{font-size:15px;font-weight:500;color:var(--ink-2);position:relative;padding:4px 0;}
+  .nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--autumn);transition:width .3s var(--ease);}
+  .nav a:hover::after{width:100%;}
+  .hd-act{display:flex;align-items:center;gap:14px;}
+  .ico-btn{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--line);background:var(--white);position:relative;cursor:pointer;color:var(--forest);transition:.2s;}
+  .ico-btn:hover{border-color:var(--forest);background:var(--forest-soft);}
+  .ico-btn .cart-n{position:absolute;top:-5px;right:-5px;background:var(--autumn);color:#fff;font-family:var(--eng);font-weight:700;font-size:12px;min-width:19px;height:19px;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+  .burger{display:none;width:42px;height:42px;border:1px solid var(--line);background:var(--white);border-radius:8px;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center;color:var(--forest);}
+  .burger span{width:20px;height:2px;background:currentColor;}
+  @media(max-width:920px){.nav{display:none;} .burger{display:flex;}}
+
+  /* ============ ヒーロー ============ */
+  .hero{position:relative;min-height:clamp(560px,84vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;}
+  .hero .bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,32,24,.25) 0%,rgba(16,32,24,.20) 40%,rgba(16,32,24,.78) 100%),url('assets/img/hero-forest.jpg') center 30%/cover no-repeat;background-color:#1a3327;}
+  .hero .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 80% 10%, transparent 50%, rgba(16,32,24,.35) 100%);}
+  .hero .wrap{position:relative;padding-bottom:clamp(48px,8vh,90px);padding-top:90px;}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--eng);font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:#f1d9b6;font-weight:600;margin-bottom:20px;}
+  .hero .eyebrow::before{content:"";width:30px;height:2px;background:var(--autumn);}
+  .hero h1{font-family:var(--mincho);font-weight:800;font-size:clamp(32px,6vw,62px);line-height:1.32;letter-spacing:.04em;text-shadow:0 2px 24px rgba(0,0,0,.35);}
+  .hero h1 em{font-style:normal;color:#f3c98e;}
+  .hero p.lead{margin-top:22px;max-width:560px;font-size:clamp(15px,1.9vw,18.5px);line-height:1.95;color:#eef2ee;text-shadow:0 1px 10px rgba(0,0,0,.4);}
+  .hero .cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
+  .hero .scroll-hint{position:absolute;right:clamp(18px,5vw,40px);bottom:34px;writing-mode:vertical-rl;font-family:var(--eng);font-size:12px;letter-spacing:.28em;color:#dfe8e2;display:flex;align-items:center;gap:14px;}
+  .hero .scroll-hint::after{content:"";width:1px;height:46px;background:linear-gradient(#dfe8e2,transparent);}
+  @media(max-width:700px){.hero .scroll-hint{display:none;}}
+
+  /* 信頼バッジ帯 */
+  .trust{background:var(--forest);color:#e7efe9;}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);}
+  .trust .ti{background:var(--forest);padding:20px 18px;text-align:center;display:flex;flex-direction:column;gap:5px;align-items:center;}
+  .trust .ti svg{color:#f3c98e;}
+  .trust .ti b{font-family:var(--mincho);font-size:16px;color:#fff;font-weight:700;letter-spacing:.03em;}
+  .trust .ti span{font-size:12px;color:#bcccc1;letter-spacing:.03em;}
+  @media(max-width:760px){.trust .wrap{grid-template-columns:repeat(2,1fr);} }
+
+  /* ============ カテゴリ導線 ============ */
+  .section{padding:clamp(56px,9vw,104px) 0;}
+  .section.tint{background:var(--paper-2);}
+  .sec-head{text-align:center;margin-bottom:clamp(34px,5vw,52px);display:flex;flex-direction:column;align-items:center;}
+  .sec-head .sec-lead{text-align:center;margin-left:auto;margin-right:auto;}
+
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .cat{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/3.6;display:flex;align-items:flex-end;color:#fff;box-shadow:0 4px 16px rgba(31,61,47,.10);transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+  .cat:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(31,61,47,.20);}
+  .cat .ci{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--forest-2);transition:transform .6s var(--ease);}
+  .cat:hover .ci{transform:scale(1.06);}
+  .cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(16,32,24,.82) 100%);}
+  .cat .cc{position:relative;padding:20px 18px 22px;z-index:2;width:100%;}
+  .cat .cc .jp{font-family:var(--mincho);font-size:21px;font-weight:700;letter-spacing:.05em;}
+  .cat .cc .en{font-family:var(--eng);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#f3c98e;display:block;margin-bottom:6px;}
+  .cat .cc .n{font-size:12.5px;color:#cfdcd3;margin-top:6px;display:inline-flex;align-items:center;gap:6px;}
+  @media(max-width:920px){.cat-grid{grid-template-columns:repeat(2,1fr);} }
+
+  /* ============ 商品グリッド ============ */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px;}
+  .chips{display:flex;gap:9px;flex-wrap:wrap;}
+  .chip{font-size:13.5px;font-weight:500;padding:8px 17px;border-radius:30px;border:1px solid var(--line);background:var(--white);color:var(--ink-2);cursor:pointer;transition:.2s;letter-spacing:.02em;}
+  .chip:hover{border-color:var(--forest);}
+  .chip.on{background:var(--forest);color:#fff;border-color:var(--forest);}
+  .sortbox{font-size:13.5px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;}
+  .sortbox select{font-family:inherit;font-size:13.5px;padding:7px 12px;border:1px solid var(--line);border-radius:4px;background:var(--white);color:var(--ink-2);}
+
+  .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  @media(max-width:980px){.pgrid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:680px){.pgrid{grid-template-columns:repeat(2,1fr);gap:14px;} }
+
+  .card{background:var(--white);border:1px solid var(--line-soft);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;position:relative;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(31,61,47,.14);border-color:var(--line);}
+  .card .ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--paper-2);}
+  .card .ph .pi{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--forest-soft);transition:transform .6s var(--ease);}
+  .card:hover .ph .pi{transform:scale(1.07);}
+  .card .badges{position:absolute;top:10px;left:10px;display:flex;flex-direction:column;gap:6px;z-index:3;}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:3px;color:#fff;backdrop-filter:blur(2px);}
+  .badge.new{background:var(--autumn);}
+  .badge.season{background:var(--ocean);}
+  .badge.gift{background:var(--forest-2);}
+  .badge.one{background:#6a4a8a;}
+  .card .fav{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#9a8f80;z-index:3;transition:.2s;}
+  .card .fav:hover{color:var(--autumn);transform:scale(1.1);}
+  .card .body{padding:15px 15px 17px;display:flex;flex-direction:column;flex:1;}
+  .card .ct{font-family:var(--eng);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .card h3{font-size:14.5px;font-weight:500;line-height:1.55;color:var(--ink);margin-bottom:auto;min-height:44px;}
+  .card .meta{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:13px;}
+  .card .price{font-family:var(--eng);font-weight:700;font-size:21px;color:var(--forest);letter-spacing:.01em;}
+  .card .price small{font-family:var(--gothic);font-size:11.5px;color:var(--ink-soft);font-weight:400;margin-left:2px;}
+  .card .add{width:40px;height:40px;border-radius:50%;background:var(--forest-soft);border:0;color:var(--forest);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.22s;flex:none;}
+  .card .add:hover{background:var(--forest);color:#fff;transform:rotate(90deg);}
+  .card.sold .ph::after{content:"SOLD OUT";position:absolute;inset:0;background:rgba(37,31,23,.55);color:#fff;font-family:var(--eng);font-size:20px;letter-spacing:.18em;font-weight:600;display:flex;align-items:center;justify-content:center;z-index:2;}
+  .card.sold .add{background:#e7e0d2;color:#b3a895;cursor:not-allowed;}
+  .card.sold .add:hover{transform:none;}
+  .card.sold .price{color:var(--ink-soft);}
+  .card .stockline{font-size:11.5px;color:var(--autumn-deep);margin-top:9px;display:flex;align-items:center;gap:6px;font-weight:600;}
+  .card .stockline i{width:6px;height:6px;border-radius:50%;background:var(--autumn);display:inline-block;animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  .more-row{text-align:center;margin-top:42px;}
+  .more-row .count{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:16px;letter-spacing:.04em;}
+
+  /* ============ 帯（中古アウトドア区画） ============ */
+  .split{background:var(--forest);color:#eef2ee;position:relative;overflow:hidden;}
+  .split::before{content:"";position:absolute;inset:0;background:url('assets/img/split-bg.jpg') center/cover;opacity:.18;}
+  .split .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center;padding:clamp(52px,8vw,86px) clamp(18px,5vw,40px);}
+  .split .lab{font-family:var(--eng);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#f3c98e;font-weight:600;margin-bottom:14px;display:inline-flex;align-items:center;gap:10px;}
+  .split .lab::before{content:"";width:26px;height:2px;background:var(--autumn);}
+  .split h2{font-family:var(--mincho);font-size:clamp(24px,3.6vw,38px);color:#fff;line-height:1.42;letter-spacing:.04em;}
+  .split p{margin-top:18px;color:#d3ded6;line-height:1.95;font-size:15.5px;max-width:520px;}
+  .split .note{margin-top:18px;font-size:13px;color:#aebfb4;padding-left:16px;border-left:2px solid var(--autumn);}
+  .split .sbtn{margin-top:28px;display:flex;gap:13px;flex-wrap:wrap;}
+  .split .panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:26px;backdrop-filter:blur(4px);}
+  .split .panel h4{font-family:var(--mincho);font-size:17px;color:#fff;margin-bottom:14px;letter-spacing:.04em;}
+  .split .panel ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+  .split .panel li{display:flex;gap:11px;font-size:14px;color:#e1eae3;line-height:1.6;}
+  .split .panel li svg{color:#f3c98e;flex:none;margin-top:3px;}
+  @media(max-width:860px){.split .wrap{grid-template-columns:1fr;} }
+
+  /* ============ 生産者ストーリー ============ */
+  .story .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,64px);align-items:center;}
+  .story .imgwrap{position:relative;}
+  .story .imgwrap .main{border-radius:8px;overflow:hidden;aspect-ratio:4/4.6;background:var(--paper-3);box-shadow:0 18px 40px rgba(31,61,47,.16);}
+  .story .imgwrap .main .pi{width:100%;height:100%;background:url('assets/img/veg-dark.jpg') center/cover;}
+  .story .imgwrap .stamp{position:absolute;bottom:-22px;right:-10px;background:var(--autumn);color:#fff;border-radius:50%;width:118px;height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--mincho);box-shadow:0 10px 26px rgba(184,83,31,.3);transform:rotate(-7deg);}
+  .story .imgwrap .stamp b{font-size:26px;line-height:1;}
+  .story .imgwrap .stamp span{font-size:11px;letter-spacing:.05em;margin-top:5px;}
+  .story blockquote{font-family:var(--mincho);font-size:clamp(19px,2.4vw,25px);color:var(--forest);line-height:1.85;letter-spacing:.04em;margin:22px 0;font-weight:600;}
+  .story p{color:var(--ink-soft);line-height:2;font-size:15.5px;margin-bottom:14px;}
+  .story .sig{margin-top:22px;font-family:var(--mincho);font-size:15px;color:var(--ink);}
+  .story .sig b{font-size:18px;}
+  @media(max-width:860px){.story .wrap{grid-template-columns:1fr;} .story .imgwrap{max-width:440px;margin:0 auto;} }
+
+  /* ============ 安心の配送 ============ */
+  .ship-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .scard{background:var(--white);border:1px solid var(--line-soft);border-radius:8px;padding:30px 26px;transition:.3s;}
+  .scard:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(31,61,47,.10);}
+  .scard .ic{width:54px;height:54px;border-radius:12px;background:var(--forest-soft);color:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .scard h3{font-family:var(--mincho);font-size:19px;color:var(--forest);margin-bottom:11px;letter-spacing:.03em;}
+  .scard p{font-size:14px;color:var(--ink-soft);line-height:1.85;}
+  @media(max-width:820px){.ship-grid{grid-template-columns:1fr;} }
+
+  /* ============ ギフト/特集 ============ */
+  .feature{background:linear-gradient(135deg,var(--ocean) 0%,#16454f 100%);color:#fff;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;}
+  .feature .fc{padding:clamp(34px,5vw,56px);display:flex;flex-direction:column;justify-content:center;}
+  .feature .lab{font-family:var(--eng);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#bfe3e8;font-weight:600;margin-bottom:14px;}
+  .feature h2{font-family:var(--mincho);font-size:clamp(24px,3.4vw,36px);line-height:1.42;letter-spacing:.04em;}
+  .feature p{margin-top:16px;color:#d8eef1;line-height:1.95;font-size:15px;max-width:440px;}
+  .feature .fbtn{margin-top:26px;}
+  .feature .fimg{background:url('assets/img/abundance.jpg') center/cover;min-height:280px;}
+  @media(max-width:760px){.feature{grid-template-columns:1fr;} .feature .fimg{order:-1;min-height:220px;} }
+
+  /* ============ レビュー ============ */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .rev{background:var(--white);border:1px solid var(--line-soft);border-radius:8px;padding:26px 24px;display:flex;flex-direction:column;gap:13px;}
+  .rev .stars{color:var(--autumn);letter-spacing:2px;font-size:15px;}
+  .rev p{font-size:14.5px;color:var(--ink-2);line-height:1.85;flex:1;}
+  .rev .who{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:9px;}
+  .rev .who b{color:var(--ink);font-weight:700;}
+  .rev .who .av{width:34px;height:34px;border-radius:50%;background:var(--forest-soft);color:var(--forest);display:flex;align-items:center;justify-content:center;font-family:var(--mincho);font-weight:700;font-size:15px;flex:none;}
+  @media(max-width:820px){.rev-grid{grid-template-columns:1fr;} }
+
+  /* ============ メルマガ ============ */
+  .news{background:var(--forest);color:#fff;border-radius:12px;padding:clamp(38px,6vw,60px);text-align:center;position:relative;overflow:hidden;}
+  .news::before{content:"";position:absolute;top:-60px;right:-40px;width:220px;height:220px;border:1px solid rgba(255,255,255,.14);border-radius:50%;}
+  .news::after{content:"";position:absolute;bottom:-80px;left:-30px;width:260px;height:260px;border:1px solid rgba(255,255,255,.10);border-radius:50%;}
+  .news .lab{font-family:var(--eng);letter-spacing:.3em;font-size:13px;color:#f3c98e;text-transform:uppercase;margin-bottom:12px;position:relative;}
+  .news h2{font-family:var(--mincho);font-size:clamp(23px,3.2vw,33px);position:relative;letter-spacing:.04em;line-height:1.45;}
+  .news p{margin-top:14px;color:#cfdcd3;max-width:520px;margin-left:auto;margin-right:auto;position:relative;font-size:14.5px;}
+  .news form{margin-top:28px;display:flex;gap:10px;max-width:480px;margin-left:auto;margin-right:auto;position:relative;}
+  .news input{flex:1;min-height:54px;border:0;border-radius:3px;padding:0 18px;font-family:inherit;font-size:15px;color:var(--ink);}
+  @media(max-width:520px){.news form{flex-direction:column;} }
+
+  /* ============ フッター ============ */
+  footer{background:#16291f;color:#b8c7bd;padding:clamp(48px,7vw,72px) 0 0;font-size:14px;}
+  .ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.10);}
+  .ft-brand .bn{font-family:var(--mincho);font-size:21px;color:#fff;font-weight:800;letter-spacing:.06em;display:flex;align-items:center;gap:11px;}
+  .ft-brand p{margin-top:16px;line-height:1.9;font-size:13.5px;color:#9fb3a5;max-width:300px;}
+  .ft-brand .addr{margin-top:16px;font-size:13px;line-height:1.9;color:#9fb3a5;}
+  .ft-col h4{font-family:var(--mincho);color:#fff;font-size:15px;margin-bottom:16px;letter-spacing:.05em;}
+  .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  .ft-col a{color:#b8c7bd;font-size:13.5px;transition:.2s;}
+  .ft-col a:hover{color:#f3c98e;padding-left:3px;}
+  .pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+  .pay span{font-size:11px;padding:5px 9px;border:1px solid rgba(255,255,255,.18);border-radius:4px;color:#cdd9d0;letter-spacing:.04em;}
+  .ft-bot{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:22px 0;flex-wrap:wrap;}
+  .ft-bot .cp{font-size:12.5px;color:#8aa093;}
+  .ft-bot .credit{font-size:11.5px;color:#6f8678;}
+  @media(max-width:820px){.ft-top{grid-template-columns:1fr 1fr;gap:28px;} }
+  @media(max-width:520px){.ft-top{grid-template-columns:1fr;} }
+
+  /* ============ デモ表示バナー ============ */
+  .demobar{background:var(--autumn);color:#fff;text-align:center;font-size:12.5px;padding:7px 14px;letter-spacing:.04em;line-height:1.5;}
+  .demobar b{font-weight:700;}
+
+  /* ============ カートトースト ============ */
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(120px);background:var(--forest);color:#fff;padding:15px 26px;border-radius:6px;box-shadow:0 12px 34px rgba(0,0,0,.28);font-size:14.5px;z-index:500;display:flex;align-items:center;gap:11px;opacity:0;transition:transform .45s var(--ease),opacity .45s;}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+  .toast svg{color:#f3c98e;}
+
+  /* ============ モバイルドロワー ============ */
+  .drawer{position:fixed;inset:0;z-index:300;visibility:hidden;}
+  .drawer .ov{position:absolute;inset:0;background:rgba(22,41,31,.5);opacity:0;transition:.3s;}
+  .drawer .pn{position:absolute;top:0;right:0;height:100%;width:min(82vw,330px);background:var(--paper);transform:translateX(100%);transition:transform .35s var(--ease);padding:26px 24px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;}
+  .drawer.open{visibility:visible;}
+  .drawer.open .ov{opacity:1;}
+  .drawer.open .pn{transform:none;}
+  .drawer .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+  .drawer .dh .bn{font-family:var(--mincho);font-size:19px;color:var(--forest);font-weight:800;}
+  .drawer .x{width:40px;height:40px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;font-size:20px;color:var(--forest);}
+  .drawer nav a{padding:14px 8px;border-bottom:1px solid var(--line-soft);font-size:16px;font-weight:500;color:var(--ink-2);display:flex;justify-content:space-between;align-items:center;}
+  .drawer nav a:hover{color:var(--forest);}
+  .drawer .dcta{margin-top:20px;}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">本文へスキップ</a>
+
+<div class="demobar">これは <b>株式会社サファリテック</b> が制作した「北の逸品堂」リニューアル提案用のデモサイトです（商品・価格は現サイトの実データを使用。決済・カート機能は動作しません）</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-l">北海道・知床／清里より産地直送　｜　全国発送（クール便対応）</div>
+    <div class="tb-r">
+      <span>5,000円以上ご購入で送料無料</span>
+      <a href="#contact">お問い合わせ</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="wrap hd">
+    <a href="#" class="brand" aria-label="北の逸品堂 トップへ">
+      <svg class="logo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#1F3D2F"/>
+        <path d="M9 33 L20 14 L31 33 Z" fill="none" stroke="#F7F3EA" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M20 33 L29 17 L38 33 Z" fill="#F7F3EA"/>
+        <circle cx="34" cy="13" r="3.4" fill="#C4622D"/>
+      </svg>
+      <span class="bn">北の逸品堂<span class="bs">Kita no Ippindo</span></span>
+    </a>
+    <nav class="nav" aria-label="メインメニュー">
+      <a href="#categories">商品を探す</a>
+      <a href="#products">特産品</a>
+      <a href="#outdoor">アウトドア中古市</a>
+      <a href="#story">生産者の物語</a>
+      <a href="#shipping">送料・配送</a>
+    </nav>
+    <div class="hd-act">
+      <button class="ico-btn" aria-label="お気に入り">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg>
+      </button>
+      <button class="ico-btn" aria-label="カート" id="cartBtn">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14l-1.2 10.5a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-n" id="cartN">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="main">
+  <div class="bg"></div>
+  <div class="wrap">
+    <span class="eyebrow">Shiretoko · Hokkaido</span>
+    <h1>知床の大地が、<br><em>そのまま食卓へ。</em></h1>
+    <p class="lead">オホーツクの寒暖差と清里の澄んだ水が育てた特産品を、作り手の顔とともにお届けします。世界自然遺産・知床のふもとから、季節ごとの「逸品」を産地直送で。</p>
+    <div class="cta-row">
+      <a href="#products" class="btn btn-cta">特産品を見る <span class="arw">→</span></a>
+      <a href="#story" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.6)">産地のはなし</a>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <div class="ti">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 3.5 8 9 10 5.5-2 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg>
+      <b>産地直送</b><span>知床・清里から発送</span>
+    </div>
+    <div class="ti">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h13v8H3z"/><path d="M16 10h3l2 3v2h-5z"/><circle cx="7" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg>
+      <b>クール便対応</b><span>冷蔵・冷凍も安心</span>
+    </div>
+    <div class="ti">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18"/><path d="M5 8c0-2 2-3 7-3s7 1 7 3-2 3-7 3"/><path d="M5 8v8c0 2 2 3 7 3s7-1 7-3V8"/></svg>
+      <b>のし・ギフト対応</b><span>贈り物にも</span>
+    </div>
+    <div class="ti">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <b>年中無休 09:00-19:30</b><span>0152-25-2642</span>
+    </div>
+  </div>
+</div>
+
+<!-- カテゴリ -->
+<section class="section" id="categories">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Categories</span>
+      <h2 class="sec-title">知床から、選りすぐりを。</h2>
+      <p class="sec-lead">「何を売る店か」が一目で伝わるよう、カテゴリを整理しました。お探しの逸品へ最短でたどり着けます。</p>
+    </div>
+    <div class="cat-grid">
+      <a href="#products" class="cat reveal" data-d="1">
+        <div class="ci" style="background-image:url('assets/img/market.jpg')"></div>
+        <div class="cc"><span class="en">Seasonal</span><span class="jp">旬の野菜</span><span class="n">アスパラ・季節の収穫</span></div>
+      </a>
+      <a href="#products" class="cat reveal" data-d="2">
+        <div class="ci" style="background-image:url('assets/img/nuts.jpg')"></div>
+        <div class="cc"><span class="en">Dried Goods</span><span class="jp">海の乾物</span><span class="n">昆布・干物・珍味</span></div>
+      </a>
+      <a href="#products" class="cat reveal" data-d="3">
+        <div class="ci" style="background-image:url('assets/img/flatlay.jpg')"></div>
+        <div class="cc"><span class="en">Gift</span><span class="jp">ギフト・詰合せ</span><span class="n">贈り物・のし対応</span></div>
+      </a>
+      <a href="#outdoor" class="cat reveal" data-d="3">
+        <div class="ci" style="background-image:url('assets/img/rack.jpg')"></div>
+        <div class="cc"><span class="en">Used Outdoor</span><span class="jp">アウトドア中古市</span><span class="n">知床の山道具・一点もの</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 特産品グリッド -->
+<section class="section tint" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Specialties</span>
+      <h2 class="sec-title">知床・オホーツクの特産品</h2>
+      <p class="sec-lead">いまの主役は、小清水町産アスパラガス。寒暖差が生む甘みを、収穫したその日に冷蔵便で。グラム数を選べるから、ご家庭用にも贈り物にも。</p>
+    </div>
+
+    <div class="toolbar reveal">
+      <div class="chips" id="chips">
+        <button class="chip on" data-f="all">すべて</button>
+        <button class="chip" data-f="veg">旬の野菜</button>
+        <button class="chip" data-f="gift">ギフト</button>
+        <button class="chip" data-f="dried">乾物</button>
+      </div>
+      <div class="sortbox">
+        <span>並び替え</span>
+        <select id="sort">
+          <option value="rec">おすすめ順</option>
+          <option value="low">価格が安い順</option>
+          <option value="high">価格が高い順</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="pgrid" id="pgrid"><!-- JSで描画 --></div>
+
+    <div class="more-row">
+      <span class="count" id="count"></span>
+      <button class="btn btn-forest" id="loadMore">もっと見る <span class="arw">↓</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 中古アウトドア区画（明確に分離） -->
+<section class="split" id="outdoor">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="lab">Used Outdoor Market</span>
+      <h2>知床アウトドア中古市。<br>山で生きた道具を、次の人へ。</h2>
+      <p>知床の自然を歩いてきた良質なアウトドアウエアを、一点ものとして厳選。Patagoniaを中心に、状態をていねいに見極めてお届けします。特産品とは売り場を分け、「探しやすさ」と「専門性」を両立しました。</p>
+      <p class="note">一点ものは在庫1点限り。サイズ・コンディションを明記し、売り切れは自動で表示が切り替わります。</p>
+      <div class="sbtn">
+        <a href="#outdoor-grid" class="btn btn-cta">中古市を見る <span class="arw">→</span></a>
+      </div>
+    </div>
+    <div class="panel reveal" data-d="1">
+      <h4>中古市の3つの約束</h4>
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">状態を5段階で明記</b><br>実寸・使用感・補修跡まで写真で。</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">一点もの在庫管理</b><br>売れたら即「SOLD OUT」表示。</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span><b style="color:#fff">サステナブルな循環</b><br>良い道具を、長く次の人へ。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 中古アウトドア商品グリッド -->
+<section class="section" id="outdoor-grid">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Patagonia & more</span>
+      <h2 class="sec-title">一点もの・中古アウトドア</h2>
+      <p class="sec-lead">サイズ・ブランド・状態で絞り込めます。気になる一着はお早めに。</p>
+    </div>
+    <div class="pgrid" id="ogrid"><!-- JSで描画 --></div>
+  </div>
+</section>
+
+<!-- 生産者ストーリー -->
+<section class="section tint story" id="story">
+  <div class="wrap">
+    <div class="imgwrap reveal">
+      <div class="main"><div class="pi"></div></div>
+      <div class="stamp"><b>清里</b><span>産地直送</span></div>
+    </div>
+    <div class="reveal" data-d="1">
+      <span class="sec-tag">Our Story</span>
+      <h2 class="sec-title" style="text-align:left">作り手の顔が見える、<br>知床のお取り寄せ。</h2>
+      <blockquote>「いちばん美味しい瞬間を、<br>そのまま届けたい。」</blockquote>
+      <p>北の逸品堂は、知床・清里で旅行業を営むなかで出会った生産者の方々と、長く築いてきた信頼から生まれました。アスパラガスは、朝採りのものをその日のうちに発送。畑から食卓までの時間を、できるだけ短く。</p>
+      <p>大量生産では出せない味と物語を、地域のネットワークだからこそお届けできます。これが、後から参入したどのECにも真似できない、私たちの強みです。</p>
+      <div class="sig">知床ツーリスト 店主　<b>石田 富雄</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 安心の配送 -->
+<section class="section" id="shipping">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Shipping</span>
+      <h2 class="sec-title">送料・配送の「困った」をなくす。</h2>
+      <p class="sec-lead">農産物ECでつまずきやすい配送まわりを、最初から作り込みます。常温・冷蔵・冷凍の同梱可否や地域別送料も、迷わせません。</p>
+    </div>
+    <div class="ship-grid">
+      <div class="scard reveal" data-d="1">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h13v8H3z"/><path d="M16 10h3l2 3v2h-5z"/><circle cx="7" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg></div>
+        <h3>クール便に完全対応</h3>
+        <p>冷蔵・冷凍が必要な商品も鮮度そのまま。常温品との同梱可否を商品ごとに自動判定し、ムダな送料が発生しません。</p>
+      </div>
+      <div class="scard reveal" data-d="2">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></div>
+        <h3>地域別送料を事前提示</h3>
+        <p>カートに入れた時点で送料が分かるから「カゴ落ち」を防止。5,000円以上で送料無料のラインも明確にご案内します。</p>
+      </div>
+      <div class="scard reveal" data-d="3">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></div>
+        <h3>季節商品の予約販売</h3>
+        <p>アスパラのような旬の商品は、収穫前からのご予約を受付。販売期間の設定で、採れたてを逃しません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ギフト特集 -->
+<section class="section tint">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="fc">
+        <span class="lab">Gift Collection</span>
+        <h2>大切な人へ、<br>知床の季節を贈る。</h2>
+        <p>のし・メッセージカード・ラッピングに対応。アスパラと乾物を組み合わせた詰合せなど、贈って喜ばれるギフトをご用意します。配送日・配送先の指定もかんたんです。</p>
+        <div class="fbtn"><a href="#products" class="btn" style="background:#fff;color:var(--ocean)">ギフトを見る <span class="arw">→</span></a></div>
+      </div>
+      <div class="fimg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- レビュー -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Voices</span>
+      <h2 class="sec-title">お客様の声</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal" data-d="1">
+        <div class="stars">★★★★★</div>
+        <p>「アスパラが本当に甘くて驚きました。スーパーのものとは別物です。朝採りで届くというのも安心。来年も予約します。」</p>
+        <div class="who"><span class="av">東</span><span><b>東京都・40代</b><br>1.5kg をご購入</span></div>
+      </div>
+      <div class="rev reveal" data-d="2">
+        <div class="stars">★★★★★</div>
+        <p>「両親へのギフトに。のし対応も丁寧で、産地のストーリーが添えられているのが嬉しかったです。とても喜ばれました。」</p>
+        <div class="who"><span class="av">大</span><span><b>大阪府・50代</b><br>ギフト詰合せ</span></div>
+      </div>
+      <div class="rev reveal" data-d="3">
+        <div class="stars">★★★★☆</div>
+        <p>「中古市でPatagoniaを購入。状態の説明が正確で、写真どおりでした。知床で使われていた一着というのも気に入っています。」</p>
+        <div class="who"><span class="av">福</span><span><b>福岡県・30代</b><br>アウトドア中古市</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- メルマガ -->
+<section class="section tint" id="contact">
+  <div class="wrap">
+    <div class="news reveal">
+      <div class="lab">Newsletter</div>
+      <h2>旬の入荷・予約開始を、いちはやく。</h2>
+      <p>アスパラの予約開始や、季節限定品の入荷をメールでお知らせ。ご登録者限定のクーポンもお届けします。</p>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="メールアドレスを入力" aria-label="メールアドレス" />
+        <button class="btn btn-cta" type="submit">登録する</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="bn">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#234534"/><path d="M9 33 L20 14 L31 33 Z" fill="none" stroke="#F7F3EA" stroke-width="2" stroke-linejoin="round"/><path d="M20 33 L29 17 L38 33 Z" fill="#F7F3EA"/><circle cx="34" cy="13" r="3.4" fill="#C4622D"/></svg>
+          北の逸品堂
+        </div>
+        <p>世界自然遺産・知床のふもと、清里町から。作り手の顔が見える特産品を、産地直送でお届けします。</p>
+        <div class="addr">
+          知床ツーリスト<br>
+          〒099-4403 北海道斜里郡清里町向陽282<br>
+          TEL 0152-25-2642（09:00-19:30 年中無休）
+        </div>
+      </div>
+      <div class="ft-col">
+        <h4>商品を探す</h4>
+        <ul>
+          <li><a href="#products">旬の野菜</a></li>
+          <li><a href="#products">海の乾物</a></li>
+          <li><a href="#products">ギフト・詰合せ</a></li>
+          <li><a href="#outdoor">アウトドア中古市</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>ご利用案内</h4>
+        <ul>
+          <li><a href="#shipping">送料・配送について</a></li>
+          <li><a href="#">お支払い方法</a></li>
+          <li><a href="#">返品・交換について</a></li>
+          <li><a href="#">特定商取引法に基づく表記</a></li>
+          <li><a href="#">よくあるご質問</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>お支払い</h4>
+        <div class="pay">
+          <span>クレジット</span><span>コンビニ</span><span>代引き</span><span>銀行振込</span><span>Pay系</span>
+        </div>
+        <h4 style="margin-top:24px">フォロー</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">公式LINE</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="cp">© 2026 北の逸品堂 / 知床ツーリスト</div>
+      <div class="credit">Designed &amp; Developed by 株式会社サファリテック（デモ）</div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span id="toastMsg">カートに追加しました</span></div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="ov" data-close></div>
+  <div class="pn">
+    <div class="dh">
+      <span class="bn">北の逸品堂</span>
+      <button class="x" data-close aria-label="閉じる">×</button>
+    </div>
+    <nav>
+      <a href="#categories" data-close>商品を探す <span>→</span></a>
+      <a href="#products" data-close>特産品 <span>→</span></a>
+      <a href="#outdoor" data-close>アウトドア中古市 <span>→</span></a>
+      <a href="#story" data-close>生産者の物語 <span>→</span></a>
+      <a href="#shipping" data-close>送料・配送 <span>→</span></a>
+      <a href="#contact" data-close>お問い合わせ <span>→</span></a>
+    </nav>
+    <a href="#products" class="btn btn-cta dcta" data-close>特産品を見る <span class="arw">→</span></a>
+  </div>
+</div>
+
+<script>
+/* ===== 商品データ（現サイトの実データを使用） ===== */
+const SPECIALS = [
+  {n:"北海道オホーツク小清水町産アスパラガス 8.0kg", p:15800, cat:"veg", tags:["gift"], img:"assets/img/greens.jpg", badge:["season"], unit:"／箱"},
+  {n:"北海道オホーツク小清水町産アスパラガス 4.0kg", p:8700, cat:"veg", tags:["gift"], img:"assets/img/greens.jpg", badge:["new"], unit:"／箱"},
+  {n:"北海道オホーツク小清水町産アスパラガス 2.0kg", p:5000, cat:"veg", tags:[], img:"assets/img/broccoli.jpg", badge:[], unit:"／箱"},
+  {n:"北海道オホーツク小清水町産アスパラガス 1.5kg", p:4100, cat:"veg", tags:[], img:"assets/img/greens.jpg", badge:[], unit:"／束"},
+  {n:"北海道オホーツク小清水町産アスパラガス 1.0kg", p:3150, cat:"veg", tags:[], img:"assets/img/broccoli.jpg", badge:[], unit:"／束", stock:3},
+  {n:"清里・知床の昆布 だし用（180g）", p:1480, cat:"dried", tags:[], img:"assets/img/flatlay.jpg", badge:[], unit:""},
+  {n:"オホーツク産 干し椎茸 化粧箱入り", p:3200, cat:"dried", tags:["gift"], img:"assets/img/nuts.jpg", badge:["gift"], unit:""},
+  {n:"知床の恵み 特産品ギフト詰合せ［松］", p:6800, cat:"gift", tags:["gift"], img:"assets/img/abundance.jpg", badge:["gift"], unit:""},
+  {n:"知床の恵み 特産品ギフト詰合せ［竹］", p:4800, cat:"gift", tags:["gift"], img:"assets/img/onions.jpg", badge:[], unit:""},
+  {n:"アスパラ予約便 2027年春（早割）", p:3000, cat:"veg", tags:[], img:"assets/img/carrots.jpg", badge:["season"], unit:"／予約"},
+  {n:"北の珍味 鮭とば 食べきりパック", p:980, cat:"dried", tags:[], img:"assets/img/nuts.jpg", badge:[], unit:""},
+  {n:"清里じゃがいも 食べ比べ 5kg", p:2600, cat:"veg", tags:[], img:"assets/img/potato.jpg", badge:["new"], unit:"／箱"},
+];
+
+const OUTDOOR = [
+  {n:"Patagonia M's リツール・ハイブリッド・フーディ（Smolder Blue）", p:39500, size:"M", cond:"美品", img:"assets/img/hoodie-rust.jpg", one:true},
+  {n:"Patagonia M's R1 エア・フルジップ・フーディ（Dried Vanilla）", p:22200, size:"L", cond:"良品", img:"assets/img/bomber-rust.jpg", one:true},
+  {n:"Patagonia M's R1 エア・ジップネック（Clement Blue）", p:19200, size:"M", cond:"美品", img:"assets/img/top-gray.jpg", one:true},
+  {n:"Patagonia M's R1 エア・クルー（Clement Blue）", p:14200, size:"S", cond:"良品", img:"assets/img/top-gray.jpg", one:true},
+  {n:"Patagonia M's R1 エア・フルジップ・フーディ（Clement Blue）", p:22200, size:"M", cond:"美品", img:"assets/img/jacket-black.jpg", one:true, sold:true},
+  {n:"Patagonia ナノパフ・ジャケット（Black）", p:16800, size:"L", cond:"並品", img:"assets/img/jacket-black.jpg", one:true},
+  {n:"THE NORTH FACE マウンテンライトジャケット", p:24800, size:"M", cond:"良品", img:"assets/img/hoodie-rust.jpg", one:true},
+  {n:"mont-bell ストームクルーザー（Red）", p:9800, size:"M", cond:"並品", img:"assets/img/bomber-rust.jpg", one:true, sold:true},
+];
+
+const yen = n => "¥" + n.toLocaleString("ja-JP");
+const badgeLabel = {new:"NEW", season:"季節限定", gift:"ギフト対応", one:"一点もの"};
+
+/* ===== カート状態 ===== */
+let cart = 0;
+const cartN = document.getElementById('cartN');
+const toast = document.getElementById('toast');
+const toastMsg = document.getElementById('toastMsg');
+let toastTimer;
+function popToast(msg){
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toast.classList.remove('show'), 2200);
+}
+function addCart(name){
+  cart++; cartN.textContent = cart;
+  cartN.animate([{transform:'scale(1.5)'},{transform:'scale(1)'}],{duration:300,easing:'ease-out'});
+  popToast("「"+ (name.length>16?name.slice(0,16)+"…":name) +"」をカートに追加");
+}
+
+/* ===== 特産品 描画 ===== */
+const pgrid = document.getElementById('pgrid');
+const countEl = document.getElementById('count');
+let curFilter = 'all', curSort = 'rec', shown = 8;
+
+function filtered(){
+  let list = SPECIALS.filter(p => curFilter==='all' ? true : (p.cat===curFilter || p.tags.includes(curFilter)));
+  if(curSort==='low') list = [...list].sort((a,b)=>a.p-b.p);
+  if(curSort==='high') list = [...list].sort((a,b)=>b.p-a.p);
+  return list;
+}
+function cardHTML(p){
+  const badges = (p.badge||[]).map(b=>`<span class="badge ${b}">${badgeLabel[b]}</span>`).join('');
+  const stock = p.stock ? `<div class="stockline"><i></i>残り${p.stock}点</div>` : '';
+  return `<article class="card reveal">
+    <div class="ph">
+      <div class="badges">${badges}</div>
+      <button class="fav" aria-label="お気に入り"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></button>
+      <div class="pi" style="background-image:url('${p.img}')"></div>
+    </div>
+    <div class="body">
+      <div class="ct">${p.cat==='veg'?'Seasonal':p.cat==='dried'?'Dried':'Gift'}</div>
+      <h3>${p.n}</h3>
+      ${stock}
+      <div class="meta">
+        <div class="price">${yen(p.p)}<small>${p.unit||''}</small></div>
+        <button class="add" aria-label="カートに追加" data-n="${p.n}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+      </div>
+    </div>
+  </article>`;
+}
+function renderSpecials(){
+  const list = filtered();
+  const slice = list.slice(0, shown);
+  pgrid.innerHTML = slice.map(cardHTML).join('');
+  countEl.textContent = `全 ${list.length} 件中 ${slice.length} 件を表示`;
+  document.getElementById('loadMore').style.display = slice.length >= list.length ? 'none':'inline-flex';
+  bindAdd(pgrid);
+  observeReveals();
+}
+
+/* ===== 中古アウトドア 描画 ===== */
+const ogrid = document.getElementById('ogrid');
+function outdoorCard(p){
+  return `<article class="card reveal ${p.sold?'sold':''}">
+    <div class="ph">
+      <div class="badges"><span class="badge one">一点もの</span></div>
+      ${p.sold?'':'<button class="fav" aria-label="お気に入り"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></button>'}
+      <div class="pi" style="background-image:url('${p.img}')"></div>
+    </div>
+    <div class="body">
+      <div class="ct">サイズ ${p.size}・状態 ${p.cond}</div>
+      <h3>${p.n}</h3>
+      <div class="meta">
+        <div class="price">${yen(p.p)}</div>
+        <button class="add" aria-label="${p.sold?'売り切れ':'カートに追加'}" ${p.sold?'disabled':''} data-n="${p.n}">
+          ${p.sold?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>'}
+        </button>
+      </div>
+    </div>
+  </article>`;
+}
+function renderOutdoor(){
+  ogrid.innerHTML = OUTDOOR.map(outdoorCard).join('');
+  bindAdd(ogrid);
+  observeReveals();
+}
+
+function bindAdd(scope){
+  scope.querySelectorAll('.add:not([disabled])').forEach(b=>{
+    b.onclick = ()=>addCart(b.dataset.n);
+  });
+}
+
+/* ===== フィルタ・ソート ===== */
+document.getElementById('chips').addEventListener('click', e=>{
+  const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  b.classList.add('on'); curFilter = b.dataset.f; shown = 8; renderSpecials();
+});
+document.getElementById('sort').addEventListener('change', e=>{ curSort = e.target.value; renderSpecials(); });
+document.getElementById('loadMore').addEventListener('click', ()=>{ shown += 4; renderSpecials(); });
+document.getElementById('cartBtn').addEventListener('click', ()=> popToast(cart? `カートに ${cart} 点（デモのため決済は動作しません）` : 'カートは空です'));
+
+/* ===== ドロワー ===== */
+const drawer = document.getElementById('drawer');
+document.getElementById('burger').onclick = ()=>drawer.classList.add('open');
+drawer.querySelectorAll('[data-close]').forEach(el=> el.onclick = ()=>drawer.classList.remove('open'));
+
+/* ===== reveal ===== */
+const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealAll = ()=> document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in'));
+let io, failsafe;
+function observeReveals(){
+  if(reduceMotion || !('IntersectionObserver' in window)){ revealAll(); return; }
+  if(!io){
+    io = new IntersectionObserver((ents)=>{
+      ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  }
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+  // フェイルセーフ：何らかの理由でObserverが発火しない環境でも、コンテンツが空白で残らないよう保証
+  clearTimeout(failsafe);
+  failsafe = setTimeout(revealAll, 1600);
+}
+
+/* init */
+renderSpecials();
+renderOutdoor();
+observeReveals();
+</script>
+</body>
+</html>
