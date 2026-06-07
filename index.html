@@ -44,9 +44,13 @@
     font-size:16px; line-height:1.85; font-weight:400; letter-spacing:.02em;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     overflow-x:hidden;
+    text-wrap:pretty; line-break:strict; word-break:normal; overflow-wrap:anywhere;
   }
+  p{text-wrap:pretty;}
+  /* 文節（フレーズ）単位で折り返し、句の途中での泣き別れを防ぐ */
+  .np{display:inline-block;}
   h1,h2,h3,h4,.mincho{font-feature-settings:"palt" 1;}
-  h1,h2,h3,h4{word-break:keep-all;overflow-wrap:anywhere;line-height:1.5;font-weight:700;}
+  h1,h2,h3,h4{word-break:keep-all;overflow-wrap:anywhere;line-height:1.5;font-weight:700;text-wrap:balance;}
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
   button{font-family:inherit;}
@@ -361,7 +365,7 @@
   <div class="wrap">
     <span class="eyebrow">Shiretoko · Hokkaido</span>
     <h1>知床の大地が、<br><em>そのまま食卓へ。</em></h1>
-    <p class="lead">オホーツクの寒暖差と清里の澄んだ水が育てた特産品を、作り手の顔とともにお届けします。世界自然遺産・知床のふもとから、季節ごとの「逸品」を産地直送で。</p>
+    <p class="lead"><span class="np">オホーツクの寒暖差と清里の澄んだ水が育てた</span><span class="np">特産品を、作り手の顔とともにお届けします。</span><span class="np">世界自然遺産・知床のふもとから、</span><span class="np">季節ごとの「逸品」を産地直送で。</span></p>
     <div class="cta-row">
       <a href="#products" class="btn btn-cta">特産品を見る <span class="arw">→</span></a>
       <a href="#story" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.6)">産地のはなし</a>
@@ -398,7 +402,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">Categories</span>
       <h2 class="sec-title">知床から、選りすぐりを。</h2>
-      <p class="sec-lead">「何を売る店か」が一目で伝わるよう、カテゴリを整理しました。お探しの逸品へ最短でたどり着けます。</p>
+      <p class="sec-lead"><span class="np">「何を売る店か」が一目で伝わるよう、</span><span class="np">カテゴリを整理しました。</span><span class="np">お探しの逸品へ最短でたどり着けます。</span></p>
     </div>
     <div class="cat-grid">
       <a href="#products" class="cat reveal" data-d="1">
@@ -427,7 +431,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">Specialties</span>
       <h2 class="sec-title">知床・オホーツクの特産品</h2>
-      <p class="sec-lead">いまの主役は、小清水町産アスパラガス。寒暖差が生む甘みを、収穫したその日に冷蔵便で。グラム数を選べるから、ご家庭用にも贈り物にも。</p>
+      <p class="sec-lead"><span class="np">いまの主役は、小清水町産アスパラガス。</span><span class="np">寒暖差が生む甘みを、</span><span class="np">収穫したその日に冷蔵便で。</span><span class="np">グラム数を選べるから、ご家庭用にも贈り物にも。</span></p>
     </div>
 
     <div class="toolbar reveal">
@@ -462,8 +466,8 @@
     <div class="reveal">
       <span class="lab">Used Outdoor Market</span>
       <h2>知床アウトドア中古市。<br>山で生きた道具を、次の人へ。</h2>
-      <p>知床の自然を歩いてきた良質なアウトドアウエアを、一点ものとして厳選。Patagoniaを中心に、状態をていねいに見極めてお届けします。特産品とは売り場を分け、「探しやすさ」と「専門性」を両立しました。</p>
-      <p class="note">一点ものは在庫1点限り。サイズ・コンディションを明記し、売り切れは自動で表示が切り替わります。</p>
+      <p><span class="np">知床の自然を歩いてきた良質なアウトドアウエアを、</span><span class="np">一点ものとして厳選。</span><span class="np">Patagoniaを中心に、</span><span class="np">状態をていねいに見極めてお届けします。</span><span class="np">特産品とは売り場を分け、</span><span class="np">「探しやすさ」と「専門性」を両立しました。</span></p>
+      <p class="note"><span class="np">一点ものは在庫1点限り。</span><span class="np">サイズ・コンディションを明記し、</span><span class="np">売り切れは自動で表示が切り替わります。</span></p>
       <div class="sbtn">
         <a href="#outdoor-grid" class="btn btn-cta">中古市を見る <span class="arw">→</span></a>
       </div>
@@ -485,7 +489,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">Patagonia & more</span>
       <h2 class="sec-title">一点もの・中古アウトドア</h2>
-      <p class="sec-lead">サイズ・ブランド・状態で絞り込めます。気になる一着はお早めに。</p>
+      <p class="sec-lead"><span class="np">サイズ・ブランド・状態で絞り込めます。</span><span class="np">気になる一着はお早めに。</span></p>
     </div>
     <div class="pgrid" id="ogrid"><!-- JSで描画 --></div>
   </div>
@@ -502,8 +506,8 @@
       <span class="sec-tag">Our Story</span>
       <h2 class="sec-title" style="text-align:left">作り手の顔が見える、<br>知床のお取り寄せ。</h2>
       <blockquote>「いちばん美味しい瞬間を、<br>そのまま届けたい。」</blockquote>
-      <p>北の逸品堂は、知床・清里で旅行業を営むなかで出会った生産者の方々と、長く築いてきた信頼から生まれました。アスパラガスは、朝採りのものをその日のうちに発送。畑から食卓までの時間を、できるだけ短く。</p>
-      <p>大量生産では出せない味と物語を、地域のネットワークだからこそお届けできます。これが、後から参入したどのECにも真似できない、私たちの強みです。</p>
+      <p><span class="np">北の逸品堂は、</span><span class="np">知床・清里で旅行業を営むなかで出会った生産者の方々と、</span><span class="np">長く築いてきた信頼から生まれました。</span><span class="np">アスパラガスは、朝採りのものをその日のうちに発送。</span><span class="np">畑から食卓までの時間を、できるだけ短く。</span></p>
+      <p><span class="np">大量生産では出せない味と物語を、</span><span class="np">地域のネットワークだからこそお届けできます。</span><span class="np">これが、後から参入したどのECにも真似できない、</span><span class="np">私たちの強みです。</span></p>
       <div class="sig">知床ツーリスト 店主　<b>石田 富雄</b></div>
     </div>
   </div>
@@ -515,7 +519,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">Shipping</span>
       <h2 class="sec-title">送料・配送の「困った」をなくす。</h2>
-      <p class="sec-lead">農産物ECでつまずきやすい配送まわりを、最初から作り込みます。常温・冷蔵・冷凍の同梱可否や地域別送料も、迷わせません。</p>
+      <p class="sec-lead"><span class="np">農産物ECでつまずきやすい配送まわりを、</span><span class="np">最初から作り込みます。</span><span class="np">常温・冷蔵・冷凍の同梱可否や地域別送料も、</span><span class="np">迷わせません。</span></p>
     </div>
     <div class="ship-grid">
       <div class="scard reveal" data-d="1">
