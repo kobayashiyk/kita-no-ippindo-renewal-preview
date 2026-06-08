@@ -405,6 +405,18 @@
   .caps .powered b{color:var(--forest);font-weight:700;}
   @media(max-width:920px){.caps .cap-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:520px){.caps .cap-grid{grid-template-columns:1fr;}}
+
+  /* ============ 読みもの（コラム） ============ */
+  .reading .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .acard{background:var(--white);border:1px solid var(--line-soft);border-radius:9px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
+  .acard:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(31,61,47,.14);}
+  .acard .ai{aspect-ratio:16/9;background-size:cover;background-position:center;}
+  .acard .ab{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;}
+  .acard .at{font-family:var(--eng);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+  .acard h3{font-family:var(--mincho);font-size:16px;color:var(--forest);margin-top:6px;line-height:1.55;}
+  .acard p{font-size:12.5px;color:var(--ink-soft);line-height:1.7;margin-top:9px;flex:1;}
+  .acard .more{font-size:12.5px;color:var(--autumn-d);font-weight:700;margin-top:12px;}
+  @media(max-width:860px){.reading .r-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
 </style>
 <link rel="canonical" href="https://shiretokotourist.com/ec/" />
 <!-- 構造化データ（JSON-LD）: 検索結果に店舗情報・価格・★を出すためのSEO実装デモ -->
@@ -816,6 +828,31 @@
         <div class="fbtn"><a href="#products" class="btn" style="background:#fff;color:var(--ocean)">ギフトを見る <span class="arw">→</span></a></div>
       </div>
       <div class="fimg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 読みもの（コラム） -->
+<section class="section reading" id="reading">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Journal</span>
+      <h2 class="sec-title">知床の読みもの</h2>
+      <p class="sec-lead"><span class="np">旬の食べ方や保存のコツ、産地のはなし。</span><span class="np">読んで、もっと美味しく。</span></p>
+    </div>
+    <div class="r-grid">
+      <a class="acard reveal" data-d="1" href="blog/asparagus-yudekata.html">
+        <div class="ai" style="background-image:url('assets/img/asparagus3.jpg')"></div>
+        <div class="ab"><div class="at">Recipe</div><h3>北海道アスパラの美味しい茹で方</h3><p>甘みを逃さない下処理・時間・塩加減の3つのコツ。</p><div class="more">読む →</div></div>
+      </a>
+      <a class="acard reveal" data-d="2" href="blog/asparagus-hozon.html">
+        <div class="ai" style="background-image:url('assets/img/asparagus5.jpg')"></div>
+        <div class="ab"><div class="at">Tips</div><h3>アスパラガスの正しい保存方法</h3><p>冷蔵は立てて、すぐ食べないなら冷凍。鮮度を保つコツ。</p><div class="more">読む →</div></div>
+      </a>
+      <a class="acard reveal" data-d="3" href="blog/hokkaido-asparagus-shun.html">
+        <div class="ai" style="background-image:url('assets/img/asparagus1.jpg')"></div>
+        <div class="ab"><div class="at">Seasonal</div><h3>北海道アスパラの旬はいつ？</h3><p>最盛期は4〜5月。知床・清里の旬カレンダーつき。</p><div class="more">読む →</div></div>
+      </a>
     </div>
   </div>
 </section>
