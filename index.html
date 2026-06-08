@@ -353,9 +353,10 @@
   .producers .p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .pcard{background:var(--white);border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(31,61,47,.08);transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
   .pcard:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(31,61,47,.15);}
-  .pcard .pimg{aspect-ratio:3/2;background-size:cover;background-position:center;position:relative;}
-  .pcard .pimg .crop{position:absolute;left:12px;bottom:12px;background:rgba(31,61,47,.92);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:30px;letter-spacing:.03em;}
-  .pcard .pbody{padding:18px 20px 22px;}
+  .pcard .pimg{aspect-ratio:3/1.7;background-size:cover;background-position:center;position:relative;}
+  .pcard .pimg .crop{position:absolute;right:12px;top:12px;background:rgba(31,61,47,.92);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:30px;letter-spacing:.03em;}
+  .pcard .pbody{padding:34px 20px 22px;position:relative;}
+  .pcard .pface{width:66px;height:66px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 12px rgba(31,61,47,.2);background-size:cover;background-position:center;position:absolute;top:-33px;left:20px;background-color:var(--forest-soft);}
   .pcard .pregion{font-family:var(--eng);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
   .pcard h3{font-family:var(--mincho);font-size:18px;color:var(--forest);margin-top:5px;letter-spacing:.03em;}
   .pcard .quote{font-family:var(--mincho);font-size:14.5px;color:var(--ink);line-height:1.75;margin-top:12px;padding-left:14px;border-left:2.5px solid var(--autumn);}
@@ -688,6 +689,7 @@
       <article class="pcard reveal" data-d="1">
         <div class="pimg" style="background-image:url('assets/img/producer1.jpg')"><span class="crop">アスパラガス</span></div>
         <div class="pbody">
+          <div class="pface" style="background-image:url('assets/img/face1.jpg')"></div>
           <div class="pregion">Koshimizu, Hokkaido</div>
           <h3>小清水 アスパラ農家</h3>
           <p class="quote">「朝3時起き。いちばん甘い瞬間に穂先を摘みます。」</p>
@@ -697,6 +699,7 @@
       <article class="pcard reveal" data-d="2">
         <div class="pimg" style="background-image:url('assets/img/producer2.jpg')"><span class="crop">じゃがいも・根菜</span></div>
         <div class="pbody">
+          <div class="pface" style="background-image:url('assets/img/face2.jpg')"></div>
           <div class="pregion">Kiyosato, Hokkaido</div>
           <h3>清里 畑作農家</h3>
           <p class="quote">「土が違う。だから、味が濃い。」</p>
@@ -706,6 +709,7 @@
       <article class="pcard reveal" data-d="3">
         <div class="pimg" style="background-image:url('assets/img/producer3.jpg')"><span class="crop">乾物・ギフト</span></div>
         <div class="pbody">
+          <div class="pface" style="background-image:url('assets/img/face3.jpg')"></div>
           <div class="pregion">Shari, Hokkaido</div>
           <h3>知床 目利きの店主</h3>
           <p class="quote">「自分が贈りたいものだけを、詰めています。」</p>
